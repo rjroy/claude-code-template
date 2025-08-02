@@ -37,7 +37,7 @@ This guide provides practical usage instructions for all Spiral AI Development (
 
 **Why Use**: To gain structured insights into problems, identify risks, or evaluate solution options with multiple stakeholder perspectives.
 
-**When to Use**: 
+**When to Use**:
 - **Level 0**: Use with `problems` or `risks` focus for vision clarity
 - **Level 1**: Use with `solutions` focus for approach viability
 
@@ -64,7 +64,7 @@ This guide provides practical usage instructions for all Spiral AI Development (
 
 **Why Use**: To preserve important information, decisions, and insights without manual copying, ensuring nothing is lost during phase transitions.
 
-**When to Use**: 
+**When to Use**:
 - **All Levels**: After any significant analysis, decision, or discovery
 - **Project Start**: Use `init` to set up context structure from templates
 
@@ -88,7 +88,7 @@ This guide provides practical usage instructions for all Spiral AI Development (
 
 **Why Use**: To maintain a clear decision audit trail with context, alternatives considered, and rationale for future reference.
 
-**When to Use**: 
+**When to Use**:
 - **Level 1+**: After analyzing options and selecting an approach
 - **Any Level**: When making consequential project decisions
 
@@ -108,7 +108,7 @@ This guide provides practical usage instructions for all Spiral AI Development (
 
 **Arguments**:
 - `<type-definition-file>`: Path to decomposition type definition
-  - Available types in `.agent/layers/`: 
+  - Available types in `.agent/layers/`:
     - `project.md` - High-level project breakdown
     - `component.md` - System component analysis
     - `feature.md` - Feature-level decomposition
@@ -119,7 +119,7 @@ This guide provides practical usage instructions for all Spiral AI Development (
 
 **Why Use**: To systematically break down large problems into smaller, actionable pieces while maintaining relationships and dependencies.
 
-**When to Use**: 
+**When to Use**:
 - **Level 2+**: Progressive decomposition phases
 - Use `project.md` for initial breakdown
 - Use `component.md` for system design
@@ -150,7 +150,7 @@ This guide provides practical usage instructions for all Spiral AI Development (
 
 **Why Use**: To create clear, actionable plans when transitioning between phases or when unsure about next steps.
 
-**When to Use**: 
+**When to Use**:
 - **All Levels**: At phase transitions
 - When context is recovered after interruption
 - When planning major transitions
@@ -177,7 +177,7 @@ This guide provides practical usage instructions for all Spiral AI Development (
 
 **Why Use**: To capture newly discovered work items in a structured format that can be properly decomposed or executed.
 
-**When to Use**: 
+**When to Use**:
 - **Level 3+**: When discovering new work during decomposition
 - When identifying tasks that need structured planning
 
@@ -199,7 +199,7 @@ This guide provides practical usage instructions for all Spiral AI Development (
 
 **Why Use**: To convert analysis recommendations into actionable work items with user input on priorities.
 
-**When to Use**: 
+**When to Use**:
 - **Level 1+**: After generating analysis reports with options
 - When reports contain multiple possible actions
 
@@ -222,7 +222,7 @@ This guide provides practical usage instructions for all Spiral AI Development (
 
 **Why Use**: To systematically work through implementation tasks with proper documentation and collaboration points.
 
-**When to Use**: 
+**When to Use**:
 - **Level 4**: Implementation execution phase
 - When ready to execute well-defined atomic tasks
 
@@ -239,15 +239,16 @@ This guide provides practical usage instructions for all Spiral AI Development (
 
 ### Level 0 (Vision Clarity)
 ```bash
-/analyze problems "Your problem description"
-/analyze risks "Your risk concerns"
+/analyze problems context/project-context.md
+/analyze risks docs/reports/problems-*.md
 /sync-context docs/reports/problems-*.md
+/sync-context docs/reports/risks-*.md
 ```
 
 ### Level 1 (Approach Viability)
 ```bash
-/analyze solutions "Your solution needs"
-/sync-decision context/project/decisions-made.md report.md 1
+/analyze solutions context/project-context.md --role=solutions-architect
+/sync-decision context/project/project-context.md report.md 'option 1'
 /sync-context docs/reports/solutions-*.md
 ```
 
@@ -269,7 +270,7 @@ This guide provides practical usage instructions for all Spiral AI Development (
 ### Level 4 (Implementation)
 ```bash
 /work-on-todo context/todos/implement-feature.md
-/work-on-todo context/todos/complex-task.md --expert=specialized
+/work-on-todo context/todos/complex-task.md --expert=typescript
 ```
 
 ### Context Recovery
